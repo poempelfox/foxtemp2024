@@ -32,10 +32,19 @@ very reasonable prices. I also wanted to finally learn KiCAD.
 
 As of June 2024, a "Rev. 0" has been designed, targetting
 JLCPCB as the manufacturer (meaning it uses parts that that
-company had in stock in June 2024), and sent off to them for
-manufacturing.
-The result has not been received yet, thus it is unknown
-if "Rev. 0" works at all, or needs fixes.
+company had in stock in June 2024), and successfully
+produced there. And it actually worked well.
+
+The following picture shows how the boards looked like when
+they arrived from JLCPCB. As you can see, most components
+are on the front of the board (left in the picture), and
+already soldered on. What's missing is the 3x2 ISP pin header,
+the battery holder, the wire antenna, and the RFM69HW on the
+back. You can also see why you really would not want to
+hand-solder the SHT45 - it's the one marked "U2": size
+1.5x1.5mm...
+
+<img src="pics/foxtemp2024r0-0.jpg" alt="two half finished foxtemp2024 devices as they arrived from the factory (showing front and back)" width="500">
 
 ## Hardware
 
@@ -51,10 +60,13 @@ Most parts should already be soldered on, except:
 
 ## Firmware
 
-The way this was designed, the FoxTemp2022 firmware should
-simply work without modifications after you set the AVRs fuses
-correctly. It is planned to make changes to the firmware
-that enable additional power savings for FoxTemp2024. That
-development will happen in the FoxTemp2022 repository, and
-not here.
+The way this was designed, the FoxTemp2022 firmware
+simply works without modifications after you set the AVRs
+fuses correctly. You can also instead compile the firmware
+in Foxtemp2024, that enables some (minor) additional power
+savings for FoxTemp2024, but would not work on the FoxTemp2022
+hardware.
+
+All development happens in the FoxTemp2022 repository, and
+not here. Just get the firmware from there.
 
