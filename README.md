@@ -58,12 +58,23 @@ Most parts should already be soldered on, except:
 * pin headers need to be soldered in
 * a battery holder needs to be connected (by soldering on the wires coming from it)
 
+Power usage should be pretty low - first measurements show
+0.02 mA at 2.8V (this will very much depend on the voltage)
+while the device is in deep sleep (which it is most of the
+time). Comparing that to FoxTemp2016, it is a bit less,
+but on the other hand, the more powerful radio module
+will use more power while actually transmitting data.
+It is currently completely unknown how long this can
+last with one set of batteries, and whether it's longer
+or shorter than the roundabout 5 years that FoxTemp2016
+managed.
+
 ## Firmware
 
 The way this was designed, the FoxTemp2022 firmware
 simply works without modifications after you set the AVRs
 fuses correctly. You can also instead compile the firmware
-in Foxtemp2024, that enables some (minor) additional power
+in Foxtemp2024-mode, that enables some (minor) additional power
 savings for FoxTemp2024, but would not work on the FoxTemp2022
 hardware.
 
