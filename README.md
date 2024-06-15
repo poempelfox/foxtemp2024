@@ -35,28 +35,38 @@ JLCPCB as the manufacturer (meaning it uses parts that that
 company had in stock in June 2024), and successfully
 produced there. And it actually worked well.
 
-The following picture shows how the boards looked like when
-they arrived from JLCPCB. As you can see, most components
-are on the front of the board (left in the picture), and
-already soldered on. What's missing is the 3x2 ISP pin header,
-the battery holder, the wire antenna, and the RFM69HW on the
-back. You can also see why you really would not want to
-hand-solder the SHT45 - it's the one marked "U2": size
-1.5x1.5mm...
-
-<img src="pics/foxtemp2024r0-0.jpg" alt="two half finished foxtemp2024 devices as they arrived from the factory (showing front and back)" width="500">
-
 ## Hardware
 
 The hardware design is very similiar to FoxTemp2022.
 At the core is an ATmega328P microcontroller, and the
 module used for the 868 MHz wireless link is an
-RFM69HW - just like in FoxTemp2022.
+RFM69HW - just like in FoxTemp2022. The main difference
+is really that it's all integrated onto a purpose-built
+board and manufactured by a factory.
 
 Most parts should already be soldered on, except:
 * the RFM69HW needs to be soldered to the back of the board
-* pin headers need to be soldered in
+* a wire antenna needs to be soldered on
+* a 3x2 ISP pin header needs to be soldered in
 * a battery holder needs to be connected (by soldering on the wires coming from it)
+
+The first of the following picture shows how the boards
+looked like when they arrived from the factory. As you can
+see, most components are on the front of the board (left
+in the picture), and already soldered on. You can also see why
+you really would not want to hand-solder the SHT45 - it's
+the chip labeled "U2": size 1.5x1.5mm...
+The second picture then show the completely assembled thing,
+with the handsoldered parts soldered on.
+
+<img src="pics/foxtemp2024r0-0.jpg" alt="two half finished foxtemp2024 devices as they arrived from the factory (showing front and back)" width="500">
+
+<img src="pics/foxtemp2024r0-1.jpg" alt="two fully finished foxtemp2024 devices (showing front and back)" width="500">
+
+The board has some additional holes for pin headers on the
+side that bring out power and unused pins from the
+microcontroller. That could e.g. be used to attach additional
+sensors. That would naturally require firmware modifications.
 
 Power usage should be pretty low - first measurements show
 0.02 mA at 2.8V (this will very much depend on the voltage)
