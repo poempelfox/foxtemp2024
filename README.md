@@ -30,10 +30,14 @@ very reasonable prices. I also wanted to finally learn KiCAD.
 
 ## Status
 
-As of June 2024, a "Rev. 0" has been designed, targetting
+In May/June 2024, a "Revision 0" has been designed, targetting
 JLCPCB as the manufacturer (meaning it uses parts that that
 company had in stock in June 2024), and successfully
-produced there. And it actually worked well.
+produced there. And it actually worked very well.
+There is no case-design for this revision.
+
+In August 2024, a "Revision 1" was designed.
+
 
 ## Hardware
 
@@ -79,6 +83,29 @@ last with one set of batteries, and whether it's longer
 or shorter than the roundabout 5 years that FoxTemp2016
 managed.
 
+### Revision 1
+
+Revision 1 has the following main changes compared
+to Rev. 0:
+* XTAL1 was dropped, the internal oscillator of the AVR
+  is good enough as we do not do anything timing-critical.
+* The battery holder was changed from one attached
+  with wires to one that is soldered onto the bottom
+  of the board. Due to this, the outline of the PCB and
+  the placement of components was changed completely,
+  so that it now fits above the battery holder well.
+  There is just a small part of the PCB
+  protruding over the battery holder, not because more
+  space was needed, but because the ISP connectors
+  need space on the bottom of the PCB - and there is
+  none where the battery holder is tightly clinging
+  to the bottom of the PCB
+* added alternative TagConnect ISP connector
+* The boost converter was changed from a LTC3525 to
+  a MAX17224. This should be more efficient and
+  thus increase battery life.
+
+
 ## Firmware
 
 The way this was designed, the FoxTemp2022 firmware
@@ -88,6 +115,7 @@ in Foxtemp2024-mode, that enables some (minor) additional power
 savings for FoxTemp2024, but would not work on the FoxTemp2022
 hardware.
 
-All development happens in the FoxTemp2022 repository, and
-not here. Just get the firmware from there.
+All firmware development happens in the
+[FoxTemp2022 repository](https://github.com/poempelfox/foxtemp2022),
+and not here. Just get the firmware from there.
 
