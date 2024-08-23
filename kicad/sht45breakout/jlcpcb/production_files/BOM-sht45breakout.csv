@@ -1,3 +1,5 @@
 Comment,Designator,Footprint,LCSC
-100nF,C1,C_0402_1005Metric,C1525
-SHT45,U1,Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad,C5360602
+C1,100nF,C_0402_1005Metric,C1525,26786529,0,0
+R1,4.7k,R_0402_modsilkscreen,C25900,9105489,0,0
+R2,4.7k,R_0402_modsilkscreen,C25900,9105489,0,0
+U1,SHT45,Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad,C5360602,2016,0,0
